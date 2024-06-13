@@ -3,6 +3,7 @@ import Product from "./Product";
 import "../styles/Product.css";
 import "../styles/Browse.css";
 import { listItems } from "../utils/utils";
+import BrowserHeader from "./BrowserHeader";
 
 const Browse = () => {
   let Data = listItems;
@@ -11,6 +12,7 @@ const Browse = () => {
 
   return (
     <div>
+      <BrowserHeader />
       <button
         className="filter-btn"
         onClick={() => {
