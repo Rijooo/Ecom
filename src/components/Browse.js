@@ -8,7 +8,7 @@ import BrowserHeader from "./BrowserHeader";
 const Browse = () => {
   let Data = listItems;
   const [listOfRes, setListOfRes] = useState(Data);
-  console.log(listOfRes);
+  // console.log(listOfRes);
 
   return (
     <div>
@@ -23,8 +23,8 @@ const Browse = () => {
         FILTER
       </button>
       <div className="wrapp">
-        {listOfRes.map((res) => (
-          <Product r={res} />
+        {listOfRes.map((res,index) => (
+          <Product  key={index}   r={res} />
         ))}
       </div>
     </div>

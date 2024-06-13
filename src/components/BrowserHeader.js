@@ -2,10 +2,9 @@ import React from "react";
 import { useSelector, UseSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 const BrowserHeader = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+//   console.log(cartItems);
   return (
     <div>
       <ul>
