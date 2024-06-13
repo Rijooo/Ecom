@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import "../styles/Product.css";
 import { IoMdStar } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 let Product = ({ r }) => {
+  let dispatch = useDispatch();
+
   const [click, setClick] = useState(null);
   let count = () => {
     setClick(click + 1);
+  };
+
+  let addCartItem = () => {
+    dispatch(addItem(r.info));
+  };
+  let countAndCart = () => {
+    count();
+    addCartItem();
   };
 
   return (
@@ -27,7 +39,7 @@ let Product = ({ r }) => {
           <p className="pweight">{r.info.Weight}g</p>
           <div className="range">
             <p className="price">₹{r.info.price}</p>
-            <button className="Add-button" onClick={count}>
+            <button className="Add-button" onClick={() => countAndCart(r.info)}>
               Add<span style={{ marginLeft: "10px" }}>+{click}</span>
             </button>
           </div>
